@@ -1,6 +1,10 @@
 //define api requests
 
+// require mongoose schema,
+// already defined in the../ model / model.js file.
 var userDB = require('../model/model');
+
+// DEFINING CRUD ACTIONS.
 
 //create and save user
 exports.create = (req, res) => {
@@ -27,7 +31,7 @@ exports.create = (req, res) => {
         })
         .catch(err => {
             res.status(500).send({
-                message: err.message || "oops... error ocurred while creating user"
+                message: err.message || "oops... error ocurred while creating a user"
             });
         });
 }
@@ -73,7 +77,7 @@ exports.update = (req, res) => {
     userDB.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
         .then(data => {
             if (!data) {
-                res.status(404).send({ message: `unable to update the user witth the ${id}, maybe user not found` })
+                res.status(404).send({ message: `unable to update the user with the ${id}, maybe user not found` })
             } else {
                 res.send(data)
             }

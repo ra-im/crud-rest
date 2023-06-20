@@ -17,7 +17,7 @@ $('#update_user').submit(function (event) {
     console.log(data);
 
     var request = {
-        "url": `http://localhost:3000/api/users/${data.id}`,
+        "url": `https://3000-raim-devtasks-ous4rqluvau.ws-eu100.gitpod.io/api/users/${data.id}`,
         "method": 'PUT',
         "data": data
     }
@@ -35,7 +35,7 @@ if (window.location.pathname == '/') {
         var id = $(this).attr('userId');
 
         var request = {
-            "url": `http://localhost:3000/api/users/${id}`,
+            "url": `https://3000-raim-devtasks-ous4rqluvau.ws-eu100.gitpod.io/api/users/${id}`,
             "method": 'DELETE',
             //"data": data
         }

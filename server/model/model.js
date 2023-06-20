@@ -1,4 +1,5 @@
-//mongoDB scheme
+// mongoDB scheme
+// define the structure and content of the document.
 
 const mongoose = require('mongoose');
 

@@ -1,8 +1,8 @@
 const axios = require('axios');
 
 exports.homeRoutes = (req, res) => {
-    //send a get request to /api/users end-point
-    axios.get('http://localhost:3000')
+    // send a get request to /api/users end-point
+    axios.get('https://3000-raim-devtasks-ous4rqluvau.ws-eu100.gitpod.io/api/users')
         .then(function (response) {
             //console.log(response.data);
             res.render('index', {users: response.data});
@@ -17,12 +17,12 @@ exports.add_user = (req, res) => {
 }
 
 exports.update_user = (req, res) => {
-    axios.get('http://localhost:3000', { params: { id: req.query.id } })
+    axios.get('https://3000-raim-devtasks-ous4rqluvau.ws-eu100.gitpod.io/api/users', { params: { id: req.query.id } })
         .then(function (userinfo){
             res.render("update_user", { user: userinfo.data });
         })
         .catch(err => {
             res.send(err);
     })
-    //res.render('update_user');
+    // res.render('update_user');
 }

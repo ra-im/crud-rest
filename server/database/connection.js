@@ -1,9 +1,11 @@
 const mongoose = require('mongoose');
 
+// defone the function to connect to the mongoDB database.
 const connectDB = async () => {
     try {
-        //connection string
+        // define the mongodb database connection string
         const con = await mongoose.connect(process.env.MONGO_URI, {
+            // to address unwanted warnings in the console.
             useNewUrlParser: true,
             useUnifiedTopology: true,
             //useFindAndModify: false,
@@ -13,6 +15,7 @@ const connectDB = async () => {
         console.log(`mongoDB connected: ${con.connection.host}`);
     } catch (err) {
         console.log(err);
+        console.log("oops, unable to connect to mongoDB");
         process.exit(1);
     }
 }

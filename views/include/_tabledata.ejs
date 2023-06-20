@@ -7,7 +7,7 @@
     <td><%= users[i].gender %></td> <!--for the gender-->
     <td><%= users[i].status %></td> <!--for the status-->
     <td>
-        <a href="/update-user?id=<%= users[i]._id %> " class="btn border-shadow update">
+        <a href="/update-user?id=<%= users[i]._id %>" class="btn border-shadow update">
             <span class="text-gradient"><i class="fa fa-pencil"></i></span>
         </a>
         <a class="btn border-shadow delete" userId = <%= users[i]._id %>>
